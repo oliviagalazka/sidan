@@ -109,9 +109,6 @@ main section {
 .content {
     width: 60%;
     color: white;
-    display: flex;
-    /* EVENTUELLT TA BORT FLEX OCH LÄGGA TILL MARGIN/PADDING */
-    flex-direction: column;
 }
 
 .content h2 {
@@ -124,6 +121,7 @@ main section {
     font-family: Barlow Semi Condensed;
     font-size: 3vh;
     margin-top: 0;
+    margin-bottom: 6vh;
 }
 
 .content p:first-of-type {
@@ -132,13 +130,14 @@ main section {
 
 .content ul {
     margin-top: 0;
+    margin-bottom: 6vh;
     list-style-type: none;
 }
 
 .content ul,
 .content p {
     font-family: Barlow Condensed Light;
-    font-size: 2.5vh;
+    font-size: 2vh;
 }
 
 /* ---------------------------------- ALBUM ----------------------------------- */
@@ -189,7 +188,6 @@ main section {
     background-color: #eecb00;
     color: #a30f71;
     font-family: Barlow Condensed Light;
-    font-size: 1vw;
     padding: 1vw;
     margin: 0;
     flex-basis: 0;
@@ -202,6 +200,7 @@ main>:nth-child(2) .list-box ol {
 }
 
 .list-box li {
+    font-size: 1vw;
     margin-left: 1vw;
 }
 
@@ -230,6 +229,7 @@ main>:nth-child(2) .list-box ol {
 
 .bottom-row p {
     font-family: Barlow Condensed Light;
+    font-weight: bold;
     font-size: 1.5vw;
     margin: 0;
     padding: 1vw;
@@ -330,36 +330,72 @@ footer p {
 
 /* ---------------------------------- MEDIA QUERIES --------------------------- */
 
+/* ---------------------------- MOBILVERSION <500PX ------------------------------*/
 @media (max-width: 500px) {
+    body {
+        background-image: url(images/background_image_two.jpeg);
+    }
+
     #wrapper {
         margin: 0;
-        border-radius: 0;
     }
 
     header h1 {
         text-align: center;
+        font-size: 15vw;
+    }
+
+    nav a {
+        font-size: 3vw;
     }
 
     .top-row {
         flex-direction: column-reverse;
-        gap: 0.5vh;
     }
 
-    .top-row .album {
+    .content,
+    .album {
         width: 100%;
     }
 
-    .top-row .content {
-        width: 100%;
+    .img-container img {
+        border-radius: 10px 0 0 10px;
     }
 
-    .content p:last-of-type {
-        margin-bottom: 0;
+    .list-box ol {
+        padding: 3vw;
+    }
+
+    .list-box li {
+        margin-left: 2.5vw;
+        font-size: 3vw;
+    }
+
+    .list-box h4 {
+        font-size: 4vw;
+    }
+
+    .content h2 {
+        font-size: 7vw;
+    }
+
+    .content h3 {
+        font-size: 5vw;
+    }
+
+    .content ul,
+    .content p {
+        font-size: 4vw;
     }
 
     .bottom-row {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
+    }
+
+    .bottom-row p:first-child {
+        grid-column: 1;
+        grid-row: 1;
     }
 
     .bottom-row p:nth-child(2) {
@@ -382,4 +418,124 @@ footer p {
         grid-row: 2;
     }
 
+    .bottom-row p {
+        font-size: 3vw;
+        padding: 2vw;
+    }
+
+    main>:last-child .bottom-row p:first-child {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+
+    main>:last-child .bottom-row p:nth-child(2) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    main>:last-child .bottom-row img {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+
+    main>:last-child .bottom-row p:nth-child(4) {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+
+    main>:last-child .bottom-row p:last-child {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    footer p {
+        font-size: 4vw;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 900px) {
+    header h1 {
+        font-size: 63px;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+    .content h2 {
+        font-size: 22px;
+    }
+
+    .content h3 {
+        font-size: 16px;
+    }
+
+    .content ul,
+    .content p,
+    .bottom-row p footer p {
+        font-size: 12px;
+    }
+}
+
+
+@media (min-width:900px) and (max-width:1200px) {
+    header h1 {
+        font-size: 7vw;
+    }
+
+    nav a {
+        font-size: 2vw;
+    }
+
+    .content h2 {
+        font-size: 2.4vw;
+    }
+
+    .content h3 {
+        font-size: 1.7vw;
+    }
+
+    .content ul,
+    .content p,
+    .bottom-row p,
+    footer p {
+        font-size: 1.3vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    header h1 {
+        font-size: 84px;
+    }
+
+    nav a {
+        font-size: 24px;
+    }
+
+    .content h2 {
+        font-size: 29px;
+    }
+
+    .content h3 {
+        font-size: 20px;
+    }
+
+    .content ul,
+    .content p,
+    .bottom-row p,
+    footer p {
+        font-size: 15.5px;
+    }
+
+    .list-box h4 {
+        font-size: 18px;
+    }
+
+    .list-box li {
+        font-size: 12px;
+    }
+
+    #wrapper {
+        width: 960px;
+    }
 }
