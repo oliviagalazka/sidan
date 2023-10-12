@@ -38,45 +38,47 @@ body {
 }
 
 #wrapper {
-    height: 95%;
-    width: 80vw;
+    margin: 5vh 10vw;
     background-color: rgba(25, 24, 24, 0.5);
     border-radius: 20px;
 }
 
+/* ---------------------------------- HEADER ---------------------------------- */
+
 header h1 {
     font-family: Bungee Shade;
     color: rgba(245, 241, 241, 0.7);
-    font-size: 60px;
-    margin: 15px;
+    font-size: 10vh;
+    margin: 2vh;
 }
+
+/* ----------------------------------- NAV ------------------------------------ */
 
 nav {
     display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin: 50px 20px;
+    gap: 0.5vh;
+    margin: 6vh 2vh;
 }
 
-a {
-    font-family: Barlow Condensed Light;
-    color: black;
-    font-size: 20px;
-    text-decoration: none;
+nav a {
     background-color: rgba(245, 241, 241, 0.7);
-    padding: 15px;
+    color: black;
+    font-family: Barlow Condensed Light;
+    text-decoration: none;
     text-align: center;
+    font-size: 3vh;
+    padding: 2vh;
     border-radius: 10px;
     flex-basis: 0;
     flex-grow: 1;
 }
 
-a:hover {
+nav a:hover {
     background-color: rgba(29, 28, 28, 0.6);
     color: white;
 }
 
-a:nth-child(2) {
+nav a:nth-child(2) {
     border: 1px solid white;
     box-shadow: 0 0 5px #fff;
     background-color: rgba(245, 241, 241, 0.7);
@@ -85,25 +87,299 @@ a:nth-child(2) {
     cursor: auto;
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-}
+/* ------------------------------ MAIN - SECTION ----------------------------- */
 
-section {
-    margin: 10px 20px;
+main section {
+    margin: 1vh 2vh;
     border: 1px solid white;
     border-radius: 20px;
-    flex-grow: 1;
     background-color: rgba(29, 28, 28, 0.6);
 }
 
-h2 {
-    font-family: Bungee Outline;
-    color: white;
+/* -------------------------- MAIN - SECTION - TOP-ROW ------------------------ */
+
+.top-row {
+    display: flex;
+    gap: 1vh;
+    padding: 2vh 2vh 0.5vh 2vh;
 }
 
-h3 {
-    font-family: Barlow Semi Condensed;
+/* --------------------------------- CONTENT ---------------------------------- */
+
+.content {
+    width: 60%;
     color: white;
+    display: flex;
+    /* EVENTUELLT TA BORT FLEX OCH LÄGGA TILL MARGIN/PADDING */
+    flex-direction: column;
+}
+
+.content h2 {
+    font-family: Bungee Outline;
+    font-size: 4vh;
+    margin: 0;
+}
+
+.content h3 {
+    font-family: Barlow Semi Condensed;
+    font-size: 3vh;
+    margin-top: 0;
+}
+
+.content p:first-of-type {
+    margin-bottom: 0;
+}
+
+.content ul {
+    margin-top: 0;
+    list-style-type: none;
+}
+
+.content ul,
+.content p {
+    font-family: Barlow Condensed Light;
+    font-size: 2.5vh;
+}
+
+/* ---------------------------------- ALBUM ----------------------------------- */
+
+.album {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+/* ---------------------------- IMAGE-CONTAINER ------------------------------- */
+
+.img-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.img-container img:first-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.img-container img:first-child:hover {
+    opacity: 0;
+}
+
+/* -------------------------------- LIST-BOX ---------------------------------- */
+
+.list-box {
+    display: flex;
+    gap: 1vh;
+}
+
+.list-box ol {
+    background-color: #eecb00;
+    color: #a30f71;
+    font-family: Barlow Condensed Light;
+    font-size: 1vw;
+    padding: 1vw;
+    margin: 0;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+main>:nth-child(2) .list-box ol {
+    background-color: #0098d2;
+    color: #f4e4be;
+}
+
+.list-box li {
+    margin-left: 1vw;
+}
+
+.list-box h4 {
+    margin: 0;
+    font-size: 1.5vw;
+}
+
+.list-box ol:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+.list-box ol:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+/* ---------------------------------- BOTTOM-ROW ----------------------------- */
+
+.bottom-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1vh;
+    padding: 0.5vh 2vh 2vh 2vh;
+}
+
+.bottom-row p {
+    font-family: Barlow Condensed Light;
+    font-size: 1.5vw;
+    margin: 0;
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+}
+
+/* ------------------------------ BOTTOM-ROW SECTION 1 ------------------------ */
+
+.bottom-row p:first-child {
+    background-color: rgb(209, 100, 169);
+    color: #eecb00;
+    grid-column: 1;
+    grid-row: 1;
+    border-radius: 10px 0 10px 10px;
+}
+
+.bottom-row p:nth-child(2) {
+    background-color: rgb(209, 100, 169);
+    color: #eecb00;
+    grid-column: 3 / span 2;
+    grid-row: 1;
+    border-radius: 10px 10px 10px 0;
+}
+
+.bottom-row img {
+    width: 100%;
+    height: 100%;
+    grid-column: 5;
+    grid-row: 1;
+    border-radius: 0 10px 10px 10px;
+}
+
+.bottom-row p:nth-child(4) {
+    grid-column: 5;
+    grid-row: 1;
+    color: white;
+    align-self: end;
+}
+
+.bottom-row p:nth-child(5) {
+    background-color: rgb(209, 100, 169);
+    color: #eecb00;
+    grid-column: 6;
+    grid-row: 1;
+    border-radius: 10px 10px 0 10px;
+}
+
+/* ------------------------------ BOTTOM-ROW SECTION 2 ------------------------ */
+
+main>:last-child .bottom-row p:first-child {
+    background-color: #f4e4be;
+    color: #0098d2;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    border-radius: 10px 10px 10px 0;
+}
+
+main>:last-child .bottom-row p:nth-child(2) {
+    background-color: #f4e4be;
+    color: #0098d2;
+    grid-column: 3;
+    grid-row: 1;
+    border-radius: 0 10px 10px 10px;
+}
+
+main>:last-child .bottom-row img {
+    grid-column: 4 / span 2;
+    grid-row: 1;
+    border-radius: 0 10px 10px 10px;
+}
+
+main>:last-child .bottom-row p:nth-child(4) {
+    grid-column: 4 / span 2;
+    grid-row: 1;
+}
+
+main>:last-child .bottom-row p:last-child {
+    background-color: #f4e4be;
+    color: #0098d2;
+    grid-column: 6;
+    grid-row: 1;
+    border-radius: 10px 10px 0 10px;
+}
+
+/* ------------------------------------- FOOTER ------------------------------- */
+
+footer {
+    padding: 2vh;
+}
+
+footer p {
+    color: white;
+    font-family: Barlow Condensed Light;
+    font-size: 2vh;
+    margin: 5vh 0 0 0;
+}
+
+/* ---------------------------------- MEDIA QUERIES --------------------------- */
+
+@media (max-width: 500px) {
+    #wrapper {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    header h1 {
+        text-align: center;
+    }
+
+    .top-row {
+        flex-direction: column-reverse;
+        gap: 0.5vh;
+    }
+
+    .top-row .album {
+        width: 100%;
+    }
+
+    .top-row .content {
+        width: 100%;
+    }
+
+    .content p:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .bottom-row {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .bottom-row p:nth-child(2) {
+        grid-column: 2 / span 2;
+        grid-row: 1;
+    }
+
+    .bottom-row img {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .bottom-row p:nth-child(4) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .bottom-row p:nth-child(5) {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
 }
