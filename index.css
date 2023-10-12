@@ -23,6 +23,7 @@
     src: url(fonts/Barlow_Semi_Condensed/BarlowSemiCondensed-Bold.ttf);
 }
 
+/* ----------------------------------- BODY ----------------------------------- */
 body {
     margin: 0;
 
@@ -37,13 +38,14 @@ body {
     align-items: center;
 }
 
+/* -------------------------------- WRAPPER ---------------------------------- */
 #wrapper {
     margin: 5vh 10vw;
     background-color: rgba(25, 24, 24, 0.5);
     border-radius: 20px;
 }
 
-/* ---------------------------------- HEADER ---------------------------------- */
+/* --------------------------------- HEADER ----------------------------------- */
 
 header h1 {
     font-family: Bungee Shade;
@@ -96,7 +98,7 @@ main section {
     background-color: rgba(29, 28, 28, 0.6);
 }
 
-/* -------------------------- MAIN - SECTION - TOP-ROW ------------------------ */
+/* ----------------------------- SECTION - TOP-ROW --------------------------- */
 
 .top-row {
     display: flex;
@@ -232,12 +234,12 @@ main>:nth-child(2) .list-box ol {
     font-weight: bold;
     font-size: 1.5vw;
     margin: 0;
-    padding: 1vw;
+    padding: 1vw 2vw;
     display: flex;
     align-items: center;
 }
 
-/* ------------------------------ BOTTOM-ROW SECTION 1 ------------------------ */
+/* -------------------------------- BOTTOM-ROW 1 ------------------------------ */
 
 .bottom-row p:first-child {
     background-color: rgb(209, 100, 169);
@@ -278,7 +280,7 @@ main>:nth-child(2) .list-box ol {
     border-radius: 10px 10px 0 10px;
 }
 
-/* ------------------------------ BOTTOM-ROW SECTION 2 ------------------------ */
+/* -------------------------------- BOTTOM-ROW 2 ------------------------------ */
 
 main>:last-child .bottom-row p:first-child {
     background-color: #f4e4be;
@@ -328,9 +330,10 @@ footer p {
     margin: 5vh 0 0 0;
 }
 
-/* ---------------------------------- MEDIA QUERIES --------------------------- */
+/* -------------------------------- MEDIA QUERIES ----------------------------- */
 
-/* ---------------------------- MOBILVERSION <500PX ------------------------------*/
+/* ----------------------------- MOBILVERSION <500PX -------------------------- */
+
 @media (max-width: 500px) {
     body {
         background-image: url(images/background_image_two.jpeg);
@@ -358,23 +361,6 @@ footer p {
         width: 100%;
     }
 
-    .img-container img {
-        border-radius: 10px 0 0 10px;
-    }
-
-    .list-box ol {
-        padding: 3vw;
-    }
-
-    .list-box li {
-        margin-left: 2.5vw;
-        font-size: 3vw;
-    }
-
-    .list-box h4 {
-        font-size: 4vw;
-    }
-
     .content h2 {
         font-size: 7vw;
     }
@@ -388,9 +374,31 @@ footer p {
         font-size: 4vw;
     }
 
+    .img-container img {
+        border-radius: 10px 0 0 10px;
+    }
+
+    .list-box ol {
+        padding: 3vw;
+    }
+
+    .list-box h4 {
+        font-size: 4vw;
+    }
+
+    .list-box li {
+        margin-left: 2.5vw;
+        font-size: 3vw;
+    }
+
     .bottom-row {
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
+    }
+
+    .bottom-row p {
+        font-size: 3vw;
+        padding: 2vw;
     }
 
     .bottom-row p:first-child {
@@ -416,11 +424,6 @@ footer p {
     .bottom-row p:nth-child(5) {
         grid-column: 3;
         grid-row: 2;
-    }
-
-    .bottom-row p {
-        font-size: 3vw;
-        padding: 2vw;
     }
 
     main>:last-child .bottom-row p:first-child {
@@ -453,6 +456,8 @@ footer p {
     }
 }
 
+/* ----------------------------- DESKTOP 800px-900px  -------------------------- */
+
 @media (min-width: 800px) and (max-width: 900px) {
     header h1 {
         font-size: 63px;
@@ -477,6 +482,7 @@ footer p {
     }
 }
 
+/* ----------------------------- DESKTOP 900px-1200px ------------------------- */
 
 @media (min-width:900px) and (max-width:1200px) {
     header h1 {
@@ -503,7 +509,13 @@ footer p {
     }
 }
 
+/* ----------------------------- DESKTOP >1200px ------------------------------ */
+
 @media (min-width: 1200px) {
+    #wrapper {
+        width: 960px;
+    }
+
     header h1 {
         font-size: 84px;
     }
@@ -533,9 +545,5 @@ footer p {
 
     .list-box li {
         font-size: 12px;
-    }
-
-    #wrapper {
-        width: 960px;
     }
 }
